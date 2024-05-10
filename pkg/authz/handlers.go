@@ -39,6 +39,8 @@ type API struct {
 
 func (a *API) RegisterEndpoints(mux *chi.Mux) {
 	mux.Get("/api/v0/check", a.check)
+	mux.Get("/api/v0/check/admin", a.check)
+	mux.Get("/admin", a.check)
 }
 
 func (a *API) check(w http.ResponseWriter, r *http.Request) {
